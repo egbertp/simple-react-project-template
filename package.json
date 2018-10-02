@@ -1,7 +1,7 @@
 {
   "name": "simple-react-project-template",
   "version": "0.1.0",
-  "description": "Simple React app that",
+  "description": "Simple React project template app",
   "scripts": {
     "start": "concurrently -k -r -s first \"npm run open:src\" \"npm run lint:watch\"",
     "open:src": "babel-node tools/srcServer.js",
@@ -9,7 +9,7 @@
     "lint:watch": "npm run lint -- --watch"
   },
   "main": "index.js",
-  "author": "Egbert Pot <egbert@egbertpot.nl>",
+  "author": "Egbert Pot",
   "license": "MIT",
   "dependencies": {
     "react": "^16.5.2"
