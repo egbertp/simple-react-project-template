@@ -4,7 +4,16 @@ I've created this repository step-by-step, by following the Pluralsight course B
 
 Instead of simply using his outdated [pluralsight-redux-start repository](https://github.com/coryhouse/pluralsight-redux-starter), I've used his [react-slingshot](https://github.com/coryhouse/react-slingshot) repository for inspiration. 
 
-In my [step by step](STEP-BY-STEP.md) guide, I try to explain what I am doing to get this super basic setup working
+__In my [step by step](STEP-BY-STEP.md) guide, I try to explain what I am doing to get this super basic setup working__
+
+
+## Why my own `simple-react-project-template`
+
+I know there are many many `react` startkits out ther on Github. But since I am (not yet) an experienced frontend developer, I would like to understand what it is that I am installing and why. Therefore I've created my own simple starterkit. 
+
+## Should I use this for production?
+
+No I don't advise you to use this project for production. This project can however be very helpfull in understanding what all the Node modules are being used for. Just follow my commit-trail and read the [step by step](STEP-BY-STEP.md) guide to start learning.
 
 
 ## Technologies
