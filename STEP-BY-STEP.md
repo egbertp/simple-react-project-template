@@ -112,3 +112,101 @@ $ yarn add browser-sync @babel/node react-hot-loader --dev
 $ yarn start
 ```
 
+### Install `eslint`
+
+```
+$ yarn add eslint eslint-plugin-import eslint-plugin-import eslint-plugin-react eslint-watch babel-eslint --dev
+```
+
+Add two `lint`-entries in the scripts section of `package.json` 
+```json
+{
+  "name": "simple-react-project-template",
+  (....)
+  "scripts": {
+    "start": "babel-node tools/srcServer.js",
+    "lint": "esw webpack.config.* src tools --color",
+    "lint:watch": "npm run lint -- --watch"
+  },
+  "main": "index.js",
+  (....)
+```
+
+Add the `eslint` configuration to `packages.json`
+
+```json
+  "babel": {
+    (...)
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "eslint:recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:react/recommended"
+    ],
+    "plugins": [
+      "react"
+    ],
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true,
+        "experimentalObjectRestSpread": true
+      }
+    },
+    "env": {
+      "es6": true,
+      "browser": true,
+      "node": true,
+      "jquery": true,
+      "jest": true
+    },
+    "globals": {}
+  }
+}
+```
+
+Test if `eslint` works
+```
+$ yarn lint
+  ✖  1:1  Unexpected console statement  no-console
+
+✖ 1 error (20:54:15)
+
+
+error Command failed with exit code 1.
+```
+
+This is a perfect error message, because we're using an `console.log` statement in `index.js`.
+
+Let the linting start, every time we start the app. 
+
+```
+$ yarn add concurrently --dev
+```
+
+Update the `scripts` section of `package.json`
+
+```json
+{
+  "name": "simple-react-project-template",
+  (...)
+  "scripts": {
+    "start": "concurrently -k -r -s first \"npm run open:src\" \"npm run lint:watch\"",
+    "open:src": "babel-node tools/srcServer.js",
+    "lint": "esw webpack.config.* src tools --color",
+    "lint:watch": "npm run lint -- --watch"
+  },
+  "main": "index.js",
+  (...)
+```
+
+Let's test if linting starts when you start the app
+
+```
+$ yarn start
+```
