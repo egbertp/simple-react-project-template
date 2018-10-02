@@ -210,3 +210,15 @@ Let's test if linting starts when you start the app
 ```
 $ yarn start
 ```
+
+
+# Phase 2: Install `react` and `redux`
+
+```
+$ yarn add react react-dom react-redux react-router-dom redux connected-react-router object-assign
+```
+
+Install all kind of loader dependencies so that `webpack` can compile the project.
+```
+$ yarn add file-loader style-loader postcss-loader css-loader sass-loader url-loader json-loader node-sass autoprefixer --dev
+```
