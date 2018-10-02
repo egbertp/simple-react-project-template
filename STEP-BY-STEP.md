@@ -61,6 +61,27 @@ You have to install `react` at this point, otherwise the `react-hot-loader` plug
 $ yarn add react
 ```
 
+Now configure babel
+```
+$ code packages.json
+```
+...by adding this conde snippet to `packages.json`
+```json
+  "babel": {
+    "env": {
+      "development": {
+        "presets": [
+          "@babel/preset-env",
+          "@babel/preset-react"
+        ],
+        "plugins": [
+          "react-hot-loader/babel"
+        ]
+      }
+    }
+  }
+```
+
 Setup directory-structure
 ```
 $ mkdir -p src/actions src/components src/constants src/reducers src/store src/styles src/types src/utils tools
@@ -91,82 +112,3 @@ $ yarn add browser-sync @babel/node react-hot-loader --dev
 $ yarn start
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-Now configure babel
-```
-$ vi .bablerc
-```
-...with this configuration
-```json
-{
-    "presets": [
-      "@babel/preset-react",
-      ["@babel/preset-env", {
-        "useBuiltIns": "entry",
-        "targets": {
-          "browsers": ["last 2 versions"],
-          "uglify": true
-        }
-      }]
-    ],
-    "plugins": [
-      "@babel/plugin-transform-runtime",
-      "styled-jsx/babel"
-    ]
-  }
-```
-
-
-Install `react` `react-dom` `redux`, `react-redux`, `redux-saga`, `prop-types`, `@reach/router`
-```
-$ yarn add react react-dom redux react-redux redux-saga prop-types @reach/router
-```
-
-Install `eslint` related packages
-```
-$ yarn add eslint eslint-config-airbnb eslint-loader eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react --dev
-```
-
-```
-$ vi .eslintrc.js
-```
-
-```js
-module.exports = {
-  extends: 'airbnb/base',
-  parser: 'babel-eslint',
-  plugins: [ 'react' ],
-  rules: {
-    'arrow-body-style': 'off',
-    'class-methods-use-this': 'off',
-    'import/no-extraneous-dependencies': [ 'error', {
-      devDependencies: [ '**/*.test.js', './webpack.*js' ]
-    }],
-    'import/no-named-as-default': [0],
-    'indent': ["error", 2, { "MemberExpression": 1, 'SwitchCase': 1 }],
-    'max-len': 'off',
-    'no-underscore-dangle': 0,
-    'no-unused-expressions': 0,
-    'react/jsx-uses-react': 2,
-    'react/jsx-uses-vars': 2,
-    'react/prefer-stateless-function': 'off',
-    'react/require-extension': 'off'
-  },
-  env: {
-    browser: true,
-    mocha: true,
-  },
-};
-```
