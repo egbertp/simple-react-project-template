@@ -8,6 +8,9 @@
   "main": "index.js",
   "author": "Egbert Pot <egbert@egbertpot.nl>",
   "license": "MIT",
+  "dependencies": {
+    "react": "^16.5.2"
+  },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
