@@ -1,6 +1,6 @@
 # Simple React Project template
 
-I've created this repository step-by-step, by following the Pluralsight course Building Applications with React and Redux in ES6 from Cory House.
+I've created this repository step-by-step, by following the Pluralsight course [Building Applications with React and Redux in ES6](https://app.pluralsight.com/library/courses/react-redux-react-router-es6/table-of-contents) from Cory House. Highly recommended course IMHO.
 
 Instead of simply using his outdated [pluralsight-redux-start repository](https://github.com/coryhouse/pluralsight-redux-starter), I've used his [react-slingshot](https://github.com/coryhouse/react-slingshot) repository for inspiration. 
 
@@ -9,7 +9,7 @@ __In my [step by step](STEP-BY-STEP.md) guide, I try to explain what I am doing 
 
 ## Why my own `simple-react-project-template`
 
-I know there are many many `react` startkits out ther on Github. But since I am (not yet) an experienced frontend developer, I would like to understand what it is that I am installing and why. Therefore I've created my own simple starterkit. 
+I know there are many `react` starterkits out ther on Github. But since I am (not yet) an experienced frontend developer, I would like to understand what it is that I am installing and why. Therefore I've created my own simple starterkit. 
 
 ## Should I use this for production?
 
