@@ -222,3 +222,40 @@ Install all kind of loader dependencies so that `webpack` can compile the projec
 ```
 $ yarn add file-loader style-loader postcss-loader css-loader sass-loader url-loader json-loader node-sass autoprefixer --dev
 ```
+
+Configure React Router
+
+Add these lines to you `App.js` 
+
+```js
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import AboutPage from "./about/AboutPage"
+import HomePage from "./home/HomePage"
+```
+
+Now you can implement the routing functionality in App.js
+```js
+class App extends React.Component {
+  render() {
+    return (
+    <Router>
+      <div>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+        </ul>
+
+        <hr />
+
+        <Route exact path="/" component={HomePage} />
+        <Route path="/about" component={AboutPage} />
+      </div>
+    </Router>
+    );
+  }
+}
+```
